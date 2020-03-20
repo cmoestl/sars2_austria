@@ -11,9 +11,10 @@
 # data source for South Korea
 # https://www.worldometers.info/coronavirus/country/south-korea/
 # 
-# 
+# for converting to script on the command line:
+# jupyter nbconvert --to script plot_cases.ipynb
 
-# In[10]:
+# In[1]:
 
 
 import numpy as np
@@ -32,16 +33,23 @@ def expon(x, a, k, b):
 sns.set_style('darkgrid')
 sns.set_context('paper')   
 
+print(country)
+print(t_start_string)
+print(t_end_string)
+print(cases_list)
+print(south_korea_offset)
 
+
+# 
 # ### Austria
 
-# In[11]:
+# In[2]:
 
 
 t_start=parse_time(t_start_string).datetime
 t_end=parse_time(t_end_string).datetime
 
-dates=parse_time([t_start + datetime.timedelta(days=1*n) for n in range((t_end - t_start).days)]).datetime
+dates=parse_time([t_start + datetime.timedelta(days=1*n) for n in range((t_end - t_start).days+1)]).datetime
 cases=np.array(cases_list)
 
 print(parse_time(dates).iso)
@@ -71,7 +79,7 @@ now=datetime.datetime.utcnow().strftime("%Y-%b-%d %H:%M")
 
 # ### South Korea
 
-# In[12]:
+# In[3]:
 
 
 t_start_sk=parse_time('2020-02-15 20:00').datetime
@@ -88,7 +96,7 @@ print(cases_sk)
 print(len(cases_sk),len(dates_sk))
 
 
-# In[13]:
+# In[5]:
 
 
 plt.figure(1,figsize=(10,6),dpi=150)
@@ -96,7 +104,7 @@ ax1 = plt.subplot(211)
 
 ax1.plot(dates,cases,marker='o',color='tomato',label=country+' verified cases',markersize=6)
 ax1.plot(dates_fut,fit,linestyle='-',color='tomato',label='exponential fit')
-ax1.plot(dates_sk,cases_sk,linestyle='--',color='steelblue',label='South Korea verified cases '+str(south_korea_offset)+' days')
+ax1.plot(dates_sk,cases_sk,linestyle='--',color='steelblue',label='South Korea verified cases +'+str(south_korea_offset)+' days')
 
 
 ax1.xaxis.set_major_formatter( matplotlib.dates.DateFormatter('%b-%d') )
@@ -113,7 +121,7 @@ ax2 = plt.subplot(212)
 
 ax2.bar(dates,np.gradient(cases),color='tomato',label=country+' daily new cases')
 ax2.plot(dates_fut,np.gradient(fit),color='tomato',label='exponential fit')
-ax2.plot(dates_sk,np.gradient(cases_sk),marker='o',color='steelblue',label='South Korea daily new cases '+str(south_korea_offset)+' days')
+ax2.plot(dates_sk,np.gradient(cases_sk),marker='o',color='steelblue',label='South Korea daily new cases +'+str(south_korea_offset)+' days')
 
 
 
