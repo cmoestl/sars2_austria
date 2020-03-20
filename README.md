@@ -40,7 +40,6 @@ For converting the jupyter notebook to a script on the command line do:
 
 
 
-
 ## Installation 
 
 Install python 3.7.6 with miniconda:
