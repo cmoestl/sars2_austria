@@ -30,7 +30,7 @@ or open jupyter lab with
 
     jupyter lab plot_cases.ipynb
     
-and choose "run all cells" from the menu after jupyter lab opens in a browser.    
+and choose "run all cells" from the "Run" menu after jupyter lab opens in a browser.    
 
 The name of the plot file that is produced can be adjusted in *set_input_here.py*.
 
