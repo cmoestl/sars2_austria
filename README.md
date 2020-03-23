@@ -10,8 +10,6 @@ data source for Austria https://orf.at/corona/stories/3157533/
 data source for South Korea https://www.worldometers.info/coronavirus/country/south-korea/
 
 
-
-
 ![Current image](austria_south_korea.png)
 
 
