@@ -1,7 +1,7 @@
 # sars2_austria
 
 Simple python data analysis for SARS2 in Austria or any other country with a jupyter notebook or script, in comparison to South Korea.
-This is **not a prediction**, but for monitoring data in comparison to an exponential fit and a country like South Korea which is a few weeks ahead in time compared to Europe.
+This is **not a prediction**, but for monitoring data in comparison to exponential and gaussian fits and a country like South Korea which is a few weeks ahead in time compared to Europe.
 
 C. Möstl, Graz, Austria https://twitter.com/chrisoutofspace
 
