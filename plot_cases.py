@@ -13,7 +13,7 @@
 # 
 # for converting to script on the command line: jupyter nbconvert --to script plot_cases.ipynb
 
-# In[36]:
+# In[1]:
 
 
 import numpy as np
@@ -58,7 +58,7 @@ print(south_korea_offset)
 # 
 # ### Austria
 
-# In[37]:
+# In[10]:
 
 
 t_start=parse_time(t_start_string).datetime
@@ -96,7 +96,7 @@ now=datetime.datetime.utcnow().strftime("%Y-%b-%d %H:%M")
 
 # #### Exponential and Gaussian fits
 
-# In[38]:
+# In[11]:
 
 
 #exponential fit for total cases
@@ -124,7 +124,7 @@ print('Gaussian fit parameters:',paramg[0])
 
 # ### South Korea
 
-# In[39]:
+# In[12]:
 
 
 t_start_sk=parse_time('2020-02-15 20:00').datetime
@@ -161,7 +161,7 @@ ygfit_sk=gaussian(dates_sk1,paramg_sk[0][0],paramg_sk[0][1],paramg_sk[0][2])
 print('Gaussian fit parameters:',paramg_sk[0])
 
 
-# In[47]:
+# In[13]:
 
 
 plt.close('all')
@@ -243,7 +243,7 @@ print('current total cases '+country,cases[-1])
 plt.savefig(filename)
 
 
-# In[26]:
+# In[ ]:
 
 
 
